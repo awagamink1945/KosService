@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#00714d",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-surface-variant": "#434655",
+                    "primary": "#004ac6",
+                    "surface-variant": "#dce2f3",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f0f3ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#005236",
+                    "inverse-on-surface": "#ebf1ff",
+                    "on-surface": "#151c27",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-primary-fixed": "#00174b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#360f00",
+                    "primary-fixed": "#dbe1ff",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#006c49",
+                    "on-background": "#151c27",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-container": "#ffede6",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container": "#e7eefe",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#943700",
+                    "error": "#ba1a1a",
+                    "primary-container": "#2563eb",
+                    "surface": "#f9f9ff",
+                    "surface-dim": "#d3daea",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "secondary-container": "#6cf8bb",
+                    "outline": "#737686",
+                    "inverse-surface": "#2a313d",
+                    "on-primary-container": "#eeefff",
+                    "tertiary-container": "#bc4800",
+                    "background": "#f9f9ff",
+                    "surface-container-high": "#e2e8f8",
+                    "surface-bright": "#f9f9ff",
+                    "surface-tint": "#0053db",
+                    "surface-container-highest": "#dce2f3",
+                    "inverse-primary": "#b4c5ff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "gutter": "12px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "container-padding": "20px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "button": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "button": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-5 h-16 w-full bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional and friendly portrait of a young Indonesian man smiling warmly at the camera. He is set against a clean, minimalist studio background with soft, high-key lighting that emphasizes a modern and helpful brand personality. The overall aesthetic is bright and clean, consistent with a high-end corporate digital assistant interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDuR2CIZ0Zk9Jnm6MWBKc9KRDg4U-F0o5sVncImtSYiqGTi8_K6RthSiFNYbgE6FjPVuZVkNB9RW12QUBOB7s4WfeXK5PZuS9hyTt4MIwOLAKOHbptLlzEyadNqYUjK-RMrLWcN7gs7YptcGA4JQEuNEFYhI7rjucbUeDo6-5virj4l2tVhVCQpr484eIhSCn0vqsJQrPLV-0SGp0aS1CBtvogklphrMQn4slOI_auC2sTS0TfFLFqjQJRB_7ix2pAvG6LEChhCvs"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-outline">Selamat pagi</span>
+<h1 class="font-h2 text-on-surface leading-tight">Halo, Budi 👋</h1>
+</div>
+</div>
+<button class="relative p-2 rounded-full hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2.5 h-2.5 bg-error rounded-full border-2 border-white"></span>
+</button>
+</header>
+<main class="px-container-padding pt-md space-y-lg">
+<!-- Search Bar -->
+<section class="relative">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input id="search-input" class="w-full pl-12 pr-4 py-3.5 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all shadow-sm" placeholder="Cari layanan atau vendor..." type="text"/>
+</section>
+<!-- Promo Banner -->
+<section class="space-y-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-h2 text-on-surface">Promo Spesial</h2>
+<button class="text-primary font-label-sm">Lihat Semua</button>
+</div>
+<div class="flex overflow-x-auto no-scrollbar gap-md -mx-container-padding px-container-padding snap-x">
+<div class="min-w-[300px] snap-center aspect-[21/9] rounded-xl relative overflow-hidden bg-primary-container text-white p-5 flex flex-col justify-end">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A clean and modern laundry room setting with sleek silver washing machines and neatly folded white towels. The lighting is bright and natural, creating a sense of cleanliness and efficiency. The composition is artistic, using a shallow depth of field to focus on the textures of the fabric, perfectly reflecting a professional laundry service promotion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhtLQ_QvJ0W4a98pwtJrLY56snfU9aS_X_3zFo3_KotHEW2Yj2Rbl0QdNdgaubs-xECnWPbDIEeokcNI1cf5LQ1EROs8z7jE_Cpt7NykBRZGvcJKUgpBvUQK1j6WzladtwTgICmlrcTFUMUE0YiAcPOijb4UKwM7lPcAIOcEm6Zdenc03C3Zlnlc7TcdmY0ZThJaVmy-8q3ALTCDQ2kUDrXP2rB1g1g-62FHQ0iWkbCf-z_iCzAqSJmvTj4A9wS8Ps7WSLVj8sy3M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Terbatas</span>
+<h3 class="font-h1 text-white mt-1">🎉 Diskon Laundry 20% minggu ini!</h3>
+<p class="text-xs text-white/80 mt-1">Klaim kupon sekarang sebelum berakhir</p>
+</div>
+</div>
+<div class="min-w-[300px] snap-center aspect-[21/9] rounded-xl relative overflow-hidden bg-tertiary-container text-white p-5 flex flex-col justify-end">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A close-up shot of a professional cleaning service kit with eco-friendly bottles and micro-fiber cloths arranged neatly on a polished wooden surface. The background is a blurred, high-end minimalist apartment interior. The color palette features natural tones and soft lighting, suggesting a reliable and high-quality home maintenance service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZoHs7zSGalxkRio3Yw5nR4Du-HiPKd7HBy2Uou_WU6myqP0CeEUSY3VcVM9COLH3MC7d1CtWdEeapftqNZ35fvq142Hgq2mPawgYL1DSPPS35oYZNwVDDmougygKvVhoBk1jIIstTWXOYtaiU3krv3EoNyXfO4nbzEX8SttbF715SUtuNtXBkq2uM7WpGiRiZsf00ctHHMr_9MmN-fK5cufvdkOzT6Kbxe6KUNraugTh_LzZPuCScA_BeF25bMohakY1NWbQtFD4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<h3 class="font-h1 text-white">Layanan Kebersihan Kos</h3>
+<p class="text-xs text-white/80 mt-1">Hanya mulai dari Rp 50.000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Grid -->
+<section class="space-y-sm">
+<h2 class="font-h2 text-on-surface">Layanan Kami</h2>
+<div class="grid grid-cols-2 gap-md">
+<button class="flex flex-col items-center justify-center p-lg bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow active:scale-95 transform" onclick="window.location.href='galon.html'">
+<div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-blue-600 text-3xl" data-icon="water_drop">water_drop</span>
+</div>
+<span class="font-button text-on-surface">Galon</span>
+</button>
+<button class="flex flex-col items-center justify-center p-lg bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow active:scale-95 transform" onclick="window.location.href='laundry.html'">
+<div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-green-600 text-3xl" data-icon="local_laundry_service">local_laundry_service</span>
+</div>
+<span class="font-button text-on-surface">Laundry</span>
+</button>
+<button class="flex flex-col items-center justify-center p-lg bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow active:scale-95 transform" onclick="window.location.href='cleaning.html'">
+<div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-orange-600 text-3xl" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<span class="font-button text-on-surface">Clean</span>
+</button>
+<button class="flex flex-col items-center justify-center p-lg bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow active:scale-95 transform" onclick="window.location.href='gas.html'">
+<div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-red-600 text-3xl" data-icon="propane_tank">propane_tank</span>
+</div>
+<span class="font-button text-on-surface">Beli Gas</span>
+</button>
+</div>
+</section>
+<!-- Vendor Terdekat -->
+<section class="space-y-sm pb-8">
+<div class="flex items-center justify-between">
+<h2 class="font-h2 text-on-surface">Vendor Terdekat</h2>
+<button class="text-primary font-label-sm">Lihat Semua</button>
+</div>
+<div id="vendor-list" class="flex flex-col gap-md">
+<!-- Vendor Card 1 -->
+<div class="flex items-center p-md bg-white rounded-xl shadow-sm border border-gray-50">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Laundry Express" class="w-full h-full object-cover" data-alt="A clean and professional store front of a modern laundry boutique. The shop has minimalist signage and large windows showing a tidy interior with white shelving. The lighting is warm and inviting, late afternoon sun creating soft shadows. This visual represents a reliable, top-rated service provider in an urban neighborhood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjDJCNNpj5xpbpPmaomNtjvabK--1aSfGDU7Vk_W4SWHn4p1DEtni5FyGxS40l-Z9ASc4lyTVTu5HPOb7J8_iAT-Sgin1Y8Vx1sAjCEAHzkKxqHfuEjJEWQ1LrCinSwT4Y1dAC3xH-38UxEgg8oZ0El34ZyKBBympq31zilr0NobwqAyLIuY7HsUn8qoUkzuo05deDROW1CCaHCeRJ5YG1i0vW5vmjR7Ar7EPDMj7BAKtcGiwjRvAC7PsjZgv6Drx1NAehpO3_1Lk"/>
+</div>
+<div class="ml-md flex-grow">
+<h4 class="font-button text-on-surface">Laundry Express</h4>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="text-xs font-semibold">4.8</span>
+<span class="text-xs text-outline ml-2">0.5 km</span>
+</div>
+<div class="flex gap-2 mt-2">
+<span class="text-[10px] bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full">Cuci Kering</span>
+<span class="text-[10px] bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full">Setrika</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white flex-shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Vendor Card 2 -->
+<div class="flex items-center p-md bg-white rounded-xl shadow-sm border border-gray-50">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Budi Bersih" class="w-full h-full object-cover" data-alt="A bright and airy kitchen space being cleaned to perfection by a professional service. Focus is on a gleaming white marble countertop and modern fixtures. The atmosphere is fresh and hygienic, with bright morning light pouring in. This image conveys the meticulous quality and trustworthiness of a home cleaning professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE_4cFhsKWzTtmOs2x990e6gJqRbASUrDezpQ6SxPwA2-5dAJYlPViXwWUjOW9qsabX4KKyH_SJtJs7DLjwWNreOqoBZ7qnZyNv-l8zNf3hUbD2UJeOXc_8iwi6YSIWwRX3qaQpQKTcQ_8xxutFAD1KuyJdHXAhnox0SGXYMgM-S-_Nq6E5ibmE6FaeAMjf875c9HS6Bvon1UsbHY7APizU-v2myheYTFiMXyEcdqphBlwRUQkOanHFpHcENlK2LFw-2bIS7mhd2k"/>
+</div>
+<div class="ml-md flex-grow">
+<h4 class="font-button text-on-surface">Budi Bersih</h4>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="text-xs font-semibold">4.6</span>
+<span class="text-xs text-outline ml-2">1.2 km</span>
+</div>
+<div class="flex gap-2 mt-2">
+<span class="text-[10px] bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full">Kamar Mandi</span>
+<span class="text-[10px] bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full">Kamar</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white flex-shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 transition-all duration-300 active:scale-95 transform" href="index.html">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill">home</span>
+<span class="text-[11px] font-medium font-sans">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-95 transform transition-transform" href="orders.html">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="text-[11px] font-medium font-sans">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-95 transform transition-transform" href="chat.html">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="text-[11px] font-medium font-sans">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-95 transform transition-transform" href="profile.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-medium font-sans">Profile</span>
+</a>
+</nav>
+<script>
+    document.getElementById('search-input').addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const vendors = document.querySelectorAll('#vendor-list > div');
+        
+        vendors.forEach(vendor => {
+            const vendorName = vendor.querySelector('h4').textContent.toLowerCase();
+            const vendorTags = Array.from(vendor.querySelectorAll('span.text-\\[10px\\]')).map(tag => tag.textContent.toLowerCase()).join(' ');
+            
+            if (vendorName.includes(searchTerm) || vendorTags.includes(searchTerm)) {
+                vendor.style.display = 'flex';
+            } else {
+                vendor.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body></html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register - KosService</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#00714d",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-surface-variant": "#434655",
+                    "primary": "#004ac6",
+                    "surface-variant": "#dce2f3",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f0f3ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#005236",
+                    "inverse-on-surface": "#ebf1ff",
+                    "on-surface": "#151c27",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-primary-fixed": "#00174b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#360f00",
+                    "primary-fixed": "#dbe1ff",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#006c49",
+                    "on-background": "#151c27",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-container": "#ffede6",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container": "#e7eefe",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#943700",
+                    "error": "#ba1a1a",
+                    "primary-container": "#2563eb",
+                    "surface": "#f9f9ff",
+                    "surface-dim": "#d3daea",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "secondary-container": "#6cf8bb",
+                    "outline": "#737686",
+                    "inverse-surface": "#2a313d",
+                    "on-primary-container": "#eeefff",
+                    "tertiary-container": "#bc4800",
+                    "background": "#f9f9ff",
+                    "surface-container-high": "#e2e8f8",
+                    "surface-bright": "#f9f9ff",
+                    "surface-tint": "#0053db",
+                    "surface-container-highest": "#dce2f3",
+                    "inverse-primary": "#b4c5ff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "gutter": "12px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "container-padding": "20px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "button": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "button": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9ff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-input-container:focus-within {
+            border-color: #004ac6;
+            box-shadow: 0 0 0 1px #004ac6;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- Top Navigation Bar (Suppressed FAB and BottomNav for Transactional Screen) -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-5 h-16 w-full bg-white shadow-sm border-b border-gray-100">
+<div class="flex items-center gap-2 cursor-pointer" onclick="history.back()">
+<span class="material-symbols-outlined text-primary text-xl">arrow_back</span>
+</div>
+<span class="font-sans text-lg font-semibold tracking-tight text-on-surface">Pendaftaran</span>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-container-padding py-xl"><div class="flex justify-center mb-lg">
+<img alt="KosService Logo" class="w-[100px] h-auto object-contain rounded-xl shadow-sm" src="https://lh3.googleusercontent.com/aida/ADBb0ujar8ImWZ9RS9-M54mHXoTHI2sU1BbskWALDpQ8TLYjoxX83Gk37wuWTCjy2MdW8bkCRgUgmD0u_wz8oJ5fJrcqE0bF_mj2Nz8r5QTJSBDxW-6RGhnDL1bX1ZGswkxCHNXGcqMYK4LCokNoPHn79FcECyGI2KXYVH6WqPUdjnN8qsTSj8o64dBzXbVePhnAfN8T1trTsVu0VTtife0k9Wk1YRIw3mx9PIJLc3MvmXE6WKJbPHWwUQTqSddhFau4v8S74uOAuUJP"/>
+</div>
+<div class="w-full max-w-md bg-white rounded-xl shadow-sm p-lg">
+<!-- Brand Identity -->
+<div class="text-center mb-xl">
+<h1 class="font-h1 text-h1 text-primary mb-xs">KosService</h1>
+<p class="font-body-md text-body-md text-outline">Solusi Praktis Anak Kos</p>
+</div>
+<!-- Registration Form -->
+<form class="space-y-md" onsubmit="event.preventDefault(); window.location.href='index.html';">
+<!-- Nama Lengkap -->
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Nama Lengkap</label>
+<div class="form-input-container flex items-center border border-outline-variant rounded-xl px-md h-[52px] transition-all bg-surface">
+<span class="material-symbols-outlined text-outline mr-sm">person</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-body-md outline-none" placeholder="Masukkan nama lengkap" type="text"/>
+</div>
+</div>
+<!-- Email/No HP -->
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Email / No. HP</label>
+<div class="form-input-container flex items-center border border-outline-variant rounded-xl px-md h-[52px] transition-all bg-surface">
+<span class="material-symbols-outlined text-outline mr-sm">mail</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-body-md outline-none" placeholder="user@email.com atau 0812..." type="text"/>
+</div>
+</div>
+<!-- Password -->
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Password</label>
+<div class="form-input-container flex items-center border border-outline-variant rounded-xl px-md h-[52px] transition-all bg-surface">
+<span class="material-symbols-outlined text-outline mr-sm">lock</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-body-md outline-none" placeholder="Buat kata sandi" type="password"/>
+<span class="material-symbols-outlined text-outline cursor-pointer ml-sm">visibility_off</span>
+</div>
+</div>
+<!-- Konfirmasi Password -->
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Konfirmasi Password</label>
+<div class="form-input-container flex items-center border border-outline-variant rounded-xl px-md h-[52px] transition-all bg-surface">
+<span class="material-symbols-outlined text-outline mr-sm">lock</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-body-md outline-none" placeholder="Ulangi kata sandi" type="password"/>
+<span class="material-symbols-outlined text-outline cursor-pointer ml-sm">visibility_off</span>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-[52px] bg-primary text-on-primary font-button text-button rounded-xl shadow-md active:scale-95 transition-transform mt-lg" type="submit">
+                    DAFTAR
+                </button>
+</form>
+<!-- Separator -->
+<div class="flex items-center my-lg gap-md">
+<div class="flex-grow h-[1px] bg-outline-variant"></div>
+<span class="font-label-sm text-label-sm text-outline">atau daftar dengan</span>
+<div class="flex-grow h-[1px] bg-outline-variant"></div>
+</div>
+<!-- Social Login -->
+<button class="w-full h-[52px] border border-outline-variant bg-white text-on-surface font-button text-button rounded-xl flex items-center justify-center gap-sm active:bg-gray-50 transition-colors">
+<img alt="Google Logo" class="w-5 h-5" data-alt="The official Google 'G' logo rendered with clean, sharp vectors against a transparent background. The logo features its iconic four colors—blue, red, yellow, and green—in a minimalist and modern corporate style. The lighting is flat and even, ensuring high legibility and a professional digital aesthetic suitable for high-end UI/UX integration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYr0m4AfrD32dIenPSok4dfTKR6_QiVD0aRSnX3P7RGkQi5pqAqSulUfPhKmo29hXygLao8GZyXBxFWug9toYBmHoNEtnTKeeOjnKcQbB2tDW-9Bo2u6YkOQ086f_8G4P1k3y9JTc2vt1NV0EAHmXxKuYNR5aCPy492euFj88PN_tLoZhviR7-Oehywyx8PNBsnlH8RahsYNlXDdHUqpdyWaZuWwMJJzcjaCCF17rJajhdUq4HnrObN6gynBEaAA_pHKtfGNZijFg"/>
+                Google
+            </button>
+<!-- Footer Link -->
+<div class="mt-xl text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Sudah punya akun? <a class="text-primary font-semibold hover:underline" href="#">Masuk di sini</a>
+</p>
+</div>
+</div>
+</main>
+<!-- Illustrative Footer Section (Bento Grid Style for Visual Appeal) -->
+<section class="w-full max-w-4xl mx-auto px-container-padding pb-xl grid grid-cols-2 gap-md">
+<div class="bg-primary-container/10 p-md rounded-xl flex flex-col justify-between h-32">
+<span class="material-symbols-outlined text-primary text-3xl">local_laundry_service</span>
+<p class="font-label-sm text-label-sm text-primary">Layanan Laundry Cepat</p>
+</div>
+<div class="bg-secondary-container/10 p-md rounded-xl flex flex-col justify-between h-32">
+<span class="material-symbols-outlined text-secondary text-3xl">construction</span>
+<p class="font-label-sm text-label-sm text-secondary">Maintenance Terpadu</p>
+</div>
+</section>
+</body></html>

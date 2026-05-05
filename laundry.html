@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Layanan Laundry - KosService</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#d3daea",
+                      "on-secondary-fixed-variant": "#005236",
+                      "tertiary-container": "#bc4800",
+                      "background": "#f9f9ff",
+                      "surface-bright": "#f9f9ff",
+                      "on-error": "#ffffff",
+                      "surface": "#f9f9ff",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-secondary-container": "#00714d",
+                      "on-primary-fixed": "#00174b",
+                      "on-primary": "#ffffff",
+                      "surface-container": "#e7eefe",
+                      "secondary": "#006c49",
+                      "primary": "#004ac6",
+                      "on-surface": "#151c27",
+                      "error": "#ba1a1a",
+                      "primary-container": "#2563eb",
+                      "secondary-container": "#6cf8bb",
+                      "on-secondary-fixed": "#002113",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "on-primary-container": "#eeefff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "tertiary": "#943700",
+                      "tertiary-fixed": "#ffdbcd",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#dce2f3",
+                      "on-tertiary-fixed": "#360f00",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-surface-variant": "#434655",
+                      "surface-container-low": "#f0f3ff",
+                      "surface-container-high": "#e2e8f8",
+                      "on-tertiary-container": "#ffede6",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#6ffbbe",
+                      "outline": "#737686",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "surface-variant": "#dce2f3",
+                      "primary-fixed": "#dbe1ff",
+                      "on-background": "#151c27",
+                      "inverse-on-surface": "#ebf1ff",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-surface": "#2a313d",
+                      "surface-tint": "#0053db"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "gutter": "12px",
+                      "container-padding": "20px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "lg": "24px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "button": ["Inter"],
+                      "h2": ["Inter"],
+                      "h1": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "button": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-32">
+<!-- Top Navigation -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm sticky top-0 z-40 px-5 py-3 flex justify-between items-center w-full">
+<div class="flex items-center gap-3">
+<button class="active:opacity-80 transition-opacity p-1" onclick="history.back()">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Inter'] font-semibold text-lg text-primary">Laundry</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a friendly young adult resident in a clean-cut style, suitable for a digital profile photo. The lighting is bright and airy, consistent with a modern corporate app aesthetic. The background is a soft, neutral studio gray, focusing all attention on the approachable subject." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgNrELR6P6aDovmmK4EvaAGpqqMbDQ8y7eil4eAzGCtaB5dWT8AK6tpks31oIZ2MbciC-fqP2f0QT_eDCZSRXo1TMtDI3XV1t--sLqWhh-7dnvJYuFcLwqWyOM9vNbnUIjIkVxIM3ewCrvRIXuMAZWhl6vdJZTMasNQtjZsc_L5i2WZJzhMn6_ttXJtrYQKUpnMv-n2jt-eopGfF8BmXDwwmBZZRQY1JKFrMW8T6ndXeOuhIMg9aUCWsG9KaCCS1iuWJDR7yjhJlM"/>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto px-container-padding py-md space-y-lg">
+<!-- Hero Section / Service Image -->
+<section class="relative h-48 rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A clean and bright laundry room scene featuring organized stacks of freshly folded white and pastel linens. Soft morning sunlight streams through a large window, creating a warm and helpful atmosphere. The overall aesthetic is minimalist and practical, emphasizing cleanliness and professional service reliability in a corporate modern style." src="https://lh3.googleusercontent.com/aida/ADBb0ujar8ImWZ9RS9-M54mHXoTHI2sU1BbskWALDpQ8TLYjoxX83Gk37wuWTCjy2MdW8bkCRgUgmD0u_wz8oJ5fJrcqE0bF_mj2Nz8r5QTJSBDxW-6RGhnDL1bX1ZGswkxCHNXGcqMYK4LCokNoPHn79FcECyGI2KXYVH6WqPUdjnN8qsTSj8o64dBzXbVePhnAfN8T1trTsVu0VTtife0k9Wk1YRIw3mx9PIJLc3MvmXE6WKJbPHWwUQTqSddhFau4v8S74uOAuUJP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-md">
+<h2 class="text-white font-h1 text-h1">Layanan Laundry</h2>
+<p class="text-white/80 text-body-md">Bersih, Wangi, dan Tepat Waktu</p>
+</div>
+</section>
+<!-- Service Type Selection -->
+<section class="space-y-sm">
+<h3 class="font-h2 text-h2 text-on-surface">Pilih Layanan</h3>
+<div class="space-y-sm">
+<!-- Option 1 -->
+<label class="flex items-center p-md bg-white border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors group">
+<input checked="" class="hidden" name="service_type" type="radio"/>
+<div class="flex-1">
+<p class="font-button text-on-surface">Cuci Kering</p>
+<p class="text-label-sm text-on-surface-variant">Hanya cuci dan pengeringan mesin</p>
+</div>
+<div class="text-right">
+<p class="font-h2 text-primary">Rp 6.000</p>
+<p class="text-label-sm text-on-surface-variant">/kg</p>
+</div>
+<div class="ml-md w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="flex items-center p-md bg-white border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors group">
+<input class="hidden" name="service_type" type="radio"/>
+<div class="flex-1">
+<p class="font-button text-on-surface">Cuci Setrika</p>
+<p class="text-label-sm text-on-surface-variant">Lengkap dengan setrika rapi</p>
+</div>
+<div class="text-right">
+<p class="font-h2 text-primary">Rp 8.000</p>
+<p class="text-label-sm text-on-surface-variant">/kg</p>
+</div>
+<div class="ml-md w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="flex items-center p-md bg-white border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors group">
+<input class="hidden" name="service_type" type="radio"/>
+<div class="flex-1">
+<p class="font-button text-on-surface">Setrika Saja</p>
+<p class="text-label-sm text-on-surface-variant">Pakaian bersih Anda kami setrika</p>
+</div>
+<div class="text-right">
+<p class="font-h2 text-primary">Rp 5.000</p>
+<p class="text-label-sm text-on-surface-variant">/kg</p>
+</div>
+<div class="ml-md w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>
+</div>
+</label>
+</div>
+</section>
+<!-- Weight Input -->
+<section class="space-y-sm">
+<div class="flex justify-between items-end">
+<h3 class="font-h2 text-h2 text-on-surface">Estimasi Berat</h3>
+<p class="text-label-sm text-primary font-semibold">Minimal 2kg</p>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline" data-icon="scale">scale</span>
+<input class="w-full pl-xl pr-md py-md bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-lg" placeholder="0" type="number" value="3"/>
+<span class="absolute right-md top-1/2 -translate-y-1/2 font-button text-on-surface-variant">Kg</span>
+</div>
+</section>
+<!-- Pickup Time Selection -->
+<section class="space-y-sm">
+<h3 class="font-h2 text-h2 text-on-surface">Waktu Penjemputan</h3>
+<div class="flex overflow-x-auto gap-sm pb-xs hide-scrollbar">
+<button class="flex-shrink-0 px-md py-sm bg-primary text-white rounded-full font-label-sm border border-primary">Hari ini, 09:00</button>
+<button class="flex-shrink-0 px-md py-sm bg-white text-on-surface-variant rounded-full font-label-sm border border-outline-variant hover:border-primary">Hari ini, 13:00</button>
+<button class="flex-shrink-0 px-md py-sm bg-white text-on-surface-variant rounded-full font-label-sm border border-outline-variant hover:border-primary">Hari ini, 17:00</button>
+<button class="flex-shrink-0 px-md py-sm bg-white text-on-surface-variant rounded-full font-label-sm border border-outline-variant hover:border-primary">Besok, 08:00</button>
+</div>
+</section>
+<!-- Delivery Time Prediction -->
+<section class="bg-surface-container-low p-md rounded-xl border border-outline-variant/30 flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary" data-icon="local_shipping">local_shipping</span>
+<div>
+<p class="font-button text-on-surface">Estimasi Selesai</p>
+<p class="text-body-md text-on-surface-variant">Pesanan Anda diperkirakan selesai pada <span class="font-semibold">Besok, pukul 14:00 WIB</span></p>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-white/80 backdrop-blur-md border-t border-slate-100 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] z-50">
+<div class="max-w-md mx-auto px-5 pt-3 pb-8">
+<div class="flex justify-between items-center mb-md">
+<div>
+<p class="text-label-sm text-on-surface-variant">Total Estimasi</p>
+<p class="text-h1 font-h1 text-primary">Rp 18.000</p>
+</div>
+<div class="text-right">
+<p class="text-label-sm text-secondary font-medium flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified">verified</span>
+                        Free Pickup
+                    </p>
+</div>
+</div>
+<button class="w-full h-[52px] bg-primary text-white font-button rounded-xl active:scale-[0.98] transition-transform flex items-center justify-center gap-2 shadow-lg shadow-primary/20" onclick="window.location.href='orderdetails.html'">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                Pesan Laundry
+            </button>
+</div>
+</div>
+<!-- Hidden Bottom Nav logic (suppressed for transactional page) -->
+</body></html>

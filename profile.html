@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#00714d",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-surface-variant": "#434655",
+                    "primary": "#004ac6",
+                    "surface-variant": "#dce2f3",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f0f3ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#005236",
+                    "inverse-on-surface": "#ebf1ff",
+                    "on-surface": "#151c27",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-primary-fixed": "#00174b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#360f00",
+                    "primary-fixed": "#dbe1ff",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#006c49",
+                    "on-background": "#151c27",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-container": "#ffede6",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container": "#e7eefe",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#943700",
+                    "error": "#ba1a1a",
+                    "primary-container": "#2563eb",
+                    "surface": "#f9f9ff",
+                    "surface-dim": "#d3daea",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "secondary-container": "#6cf8bb",
+                    "outline": "#737686",
+                    "inverse-surface": "#2a313d",
+                    "on-primary-container": "#eeefff",
+                    "tertiary-container": "#bc4800",
+                    "background": "#f9f9ff",
+                    "surface-container-high": "#e2e8f8",
+                    "surface-bright": "#f9f9ff",
+                    "surface-tint": "#0053db",
+                    "surface-container-highest": "#dce2f3",
+                    "inverse-primary": "#b4c5ff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "gutter": "12px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "container-padding": "20px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "button": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "button": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Top AppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-5 h-16 w-full bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 shadow-sm">
+<h1 class="font-h1 text-h1 text-on-surface">Profil</h1>
+<button class="p-2 rounded-full hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400">notifications</span>
+</button>
+</header>
+<main class="px-container-padding py-lg flex flex-col gap-lg pb-32">
+<!-- User Section -->
+<section class="flex flex-col items-center gap-md">
+<div class="relative">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-sm">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional studio portrait of a friendly Indonesian man in his late 20s with a clean-cut hairstyle. The lighting is soft and flattering, typical of high-end corporate photography, with a neutral, bright grey background. The image has a clean, minimalist aesthetic that fits perfectly into a modern blue-themed mobile application interface. The colors are natural and vibrant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABpaVVvzpiCEjJTz_pHMDGfSoECKBhtvr3-QQv_X72WeJSLoMSY_zfPId7ZbBXelltFqfKKWQ46k_E1z5zCBMM0rD2raHmExdqRY2w_KHJnfVdoN6KiQW07ILsrd4bsQUx4jp7AAUzN8uHqwuCveAVAGLLsgqzl4H8_4Cn-Lt9I22tnqvg6VnOG4ZuLlSpnlIOaZcBmWyh_X0ldVBtt_fsV00iL3XJcumpJaSCt0bPaYalxzPV61I-IQ_fy0IdXkUL06ZlWPAk-t8"/>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full border-2 border-white shadow-md">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-h2 text-h2 text-on-surface">Budi Santoso</h2>
+<p class="font-body-md text-body-md text-outline">budi@email.com</p>
+</div>
+</section>
+<!-- Settings Container -->
+<section class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+<!-- Edit Profile -->
+<button class="w-full flex items-center justify-between p-md hover:bg-gray-50 transition-colors border-b border-gray-50">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">person</span>
+<span class="font-body-lg text-body-lg text-on-surface">Edit Profil</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+<!-- Alamat Kos -->
+<button class="w-full flex items-center justify-between p-md hover:bg-gray-50 transition-colors border-b border-gray-50">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-body-lg text-body-lg text-on-surface">Alamat Kos</span>
+</div>
+<div class="flex items-center gap-xs bg-primary-container/10 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-wider">Pinned</span>
+</div>
+</button>
+<!-- Metode Bayar -->
+<button class="w-full flex items-center justify-between p-md hover:bg-gray-50 transition-colors border-b border-gray-50">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<span class="font-body-lg text-body-lg text-on-surface">Metode Bayar</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+<!-- Laporan Bulanan -->
+<button class="w-full flex items-center justify-between p-md hover:bg-gray-50 transition-colors border-b border-gray-50">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<span class="font-body-lg text-body-lg text-on-surface">Laporan Bulanan</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+<!-- Bantuan -->
+<button class="w-full flex items-center justify-between p-md hover:bg-gray-50 transition-colors border-b border-gray-50">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">help</span>
+<span class="font-body-lg text-body-lg text-on-surface">Bantuan</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+<!-- Tentang App -->
+<button class="w-full flex items-center justify-between p-md hover:bg-gray-50 transition-colors">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">info</span>
+<span class="font-body-lg text-body-lg text-on-surface">Tentang App</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+</section>
+<!-- Logout Section -->
+<section class="mt-base">
+<button class="w-full h-[52px] flex items-center justify-center gap-sm bg-error-container text-on-error-container rounded-xl font-button text-button transition-all active:scale-[0.98] active:opacity-90">
+<span class="material-symbols-outlined">logout</span>
+                Keluar
+            </button>
+<p class="text-center mt-md font-label-sm text-label-sm text-outline">Versi 2.4.1 (Build 882)</p>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-95 transform transition-transform" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[11px] font-medium font-sans">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-95 transform transition-transform" href="orders.html">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[11px] font-medium font-sans">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-95 transform transition-transform" href="chat.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-[11px] font-medium font-sans">Chat</span>
+</a>
+<!-- Profile Active State -->
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 transition-all duration-300 active:scale-95 transform" href="profile.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[11px] font-medium font-sans">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d3daea",
+                    "on-secondary-fixed-variant": "#005236",
+                    "tertiary-container": "#bc4800",
+                    "background": "#f9f9ff",
+                    "surface-bright": "#f9f9ff",
+                    "on-error": "#ffffff",
+                    "surface": "#f9f9ff",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#b4c5ff",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-fixed": "#00174b",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e7eefe",
+                    "secondary": "#006c49",
+                    "primary": "#004ac6",
+                    "on-surface": "#151c27",
+                    "error": "#ba1a1a",
+                    "primary-container": "#2563eb",
+                    "secondary-container": "#6cf8bb",
+                    "on-secondary-fixed": "#002113",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-primary-container": "#eeefff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "tertiary": "#943700",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#dce2f3",
+                    "on-tertiary-fixed": "#360f00",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-surface-variant": "#434655",
+                    "surface-container-low": "#f0f3ff",
+                    "surface-container-high": "#e2e8f8",
+                    "on-tertiary-container": "#ffede6",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#6ffbbe",
+                    "outline": "#737686",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-variant": "#dce2f3",
+                    "primary-fixed": "#dbe1ff",
+                    "on-background": "#151c27",
+                    "inverse-on-surface": "#ebf1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2a313d",
+                    "surface-tint": "#0053db"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "gutter": "12px",
+                    "container-padding": "20px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "button": ["Inter"],
+                    "h2": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "button": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dce2f3; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm sticky top-0 z-50 flex justify-between items-center w-full px-5 py-3">
+<div class="flex items-center gap-4">
+<button class="active:opacity-80 transition-opacity text-slate-500 hover:bg-slate-50 p-2 rounded-full" onclick="history.back()">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Inter'] font-semibold text-lg text-on-surface">Clean</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="active:opacity-80 transition-opacity text-blue-600">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="User Profile Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUReVEc-BxEDQa__5VlXKJpQ94sUNYQoACBZVXJGv_pL_tyHDWp4Fu4814pqXupm0uxxuMqipMi38jKtd1iIESnWRsg9YQGMY1tp0WZ7zqOyG0zyUBYCR57yxvrlsXhyF7pdG7UookpVmk2MZFNbI08-mfsQ-aUSYZM7B7Vqe0udZsv8xxodZ7VnpAqnV9e09NH71qwU7ay9eZrRz26_1LtVEB_YKjPUtWeK3GxHAh4Fex_YQm36kqtRs19hDRfk8WmZ9WzzsyM6E"/>
+</div>
+</div>
+</header>
+<main class="flex-grow pb-32">
+<!-- Hero Section -->
+<section class="px-container-padding pt-md">
+<div class="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-sm group">
+<img class="w-full h-full object-cover" data-alt="A professional cleaning service scene showcasing a modern, bright apartment interior with minimalist decor. A professional cleaner is subtly positioned using high-quality tools on a marble surface. The lighting is bright and natural, emphasizing a pristine and clinical yet welcoming atmosphere. The primary blue of the brand is represented in small equipment details, while the overall palette is clean whites and soft grays." src="https://lh3.googleusercontent.com/aida/ADBb0ujar8ImWZ9RS9-M54mHXoTHI2sU1BbskWALDpQ8TLYjoxX83Gk37wuWTCjy2MdW8bkCRgUgmD0u_wz8oJ5fJrcqE0bF_mj2Nz8r5QTJSBDxW-6RGhnDL1bX1ZGswkxCHNXGcqMYK4LCokNoPHn79FcECyGI2KXYVH6WqPUdjnN8qsTSj8o64dBzXbVePhnAfN8T1trTsVu0VTtife0k9Wk1YRIw3mx9PIJLc3MvmXE6WKJbPHWwUQTqSddhFau4v8S74uOAuUJP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-md">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-sm inline-block w-fit mb-2">Available Now</span>
+<h2 class="text-h1 text-white font-h1">Layanan Cleaning</h2>
+<p class="text-body-md text-slate-200 font-body-md">Professional cleaning for your cozy boarding room.</p>
+</div>
+</div>
+</section>
+<!-- Service Packages (Bento-style Grid) -->
+<section class="px-container-padding mt-lg">
+<h3 class="text-h2 font-h2 mb-md">Cleaning Packages</h3>
+<div class="grid grid-cols-2 gap-sm">
+<!-- Deep Clean Card (Main Focus) -->
+<div class="col-span-2 bg-surface-container-low border border-outline-variant rounded-xl p-md shadow-sm relative overflow-hidden group cursor-pointer hover:border-primary transition-colors">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-primary font-bold text-label-sm uppercase tracking-wider mb-1">Most Popular</p>
+<h4 class="text-h2 font-h2 text-on-surface">Deep Clean</h4>
+<p class="text-body-md text-on-surface-variant font-body-md mt-1">Full thorough cleaning including dusting, mopping, and detailing.</p>
+</div>
+<div class="text-right">
+<span class="text-h2 font-h2 text-primary">Rp 75.000</span>
+</div>
+</div>
+<div class="mt-md flex items-center gap-4 text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>120 min</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Premium Tools</span>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5">
+<span class="material-symbols-outlined text-[120px]">cleaning_services</span>
+</div>
+</div>
+<!-- Basic Room Clean -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm cursor-pointer hover:border-primary transition-colors">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center mb-sm text-primary">
+<span class="material-symbols-outlined">bedroom_parent</span>
+</div>
+<h4 class="text-body-lg font-h2 text-on-surface">Basic Room Clean</h4>
+<p class="text-primary font-bold text-body-md mt-sm">Rp 35.000</p>
+<p class="text-label-sm text-on-surface-variant mt-xs">45 min duration</p>
+</div>
+<!-- Kamar Mandi -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm cursor-pointer hover:border-primary transition-colors">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center mb-sm text-primary">
+<span class="material-symbols-outlined">bathroom</span>
+</div>
+<h4 class="text-body-lg font-h2 text-on-surface">Kamar Mandi</h4>
+<p class="text-primary font-bold text-body-md mt-sm">Rp 25.000</p>
+<p class="text-label-sm text-on-surface-variant mt-xs">30 min duration</p>
+</div>
+</div>
+</section>
+<!-- Schedule Section -->
+<section class="px-container-padding mt-lg">
+<h3 class="text-h2 font-h2 mb-md">Schedule Service</h3>
+<div class="bg-surface-container-low rounded-xl p-md border border-outline-variant">
+<div class="flex items-center justify-between mb-md">
+<p class="text-body-md font-bold text-on-surface">Select Date</p>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-label-sm">October 2023</span>
+</div>
+</div>
+<!-- Horizontal Date Picker -->
+<div class="flex gap-sm overflow-x-auto pb-sm custom-scrollbar">
+<div class="flex-shrink-0 w-14 h-20 rounded-lg bg-surface-container-highest border border-outline-variant flex flex-col items-center justify-center cursor-pointer">
+<span class="text-label-sm text-on-surface-variant">Mon</span>
+<span class="text-h2 font-h2">16</span>
+</div>
+<div class="flex-shrink-0 w-14 h-20 rounded-lg bg-primary text-on-primary flex flex-col items-center justify-center cursor-pointer ring-2 ring-primary ring-offset-2">
+<span class="text-label-sm opacity-80">Tue</span>
+<span class="text-h2 font-h2">17</span>
+</div>
+<div class="flex-shrink-0 w-14 h-20 rounded-lg bg-surface-container-highest border border-outline-variant flex flex-col items-center justify-center cursor-pointer">
+<span class="text-label-sm text-on-surface-variant">Wed</span>
+<span class="text-h2 font-h2">18</span>
+</div>
+<div class="flex-shrink-0 w-14 h-20 rounded-lg bg-surface-container-highest border border-outline-variant flex flex-col items-center justify-center cursor-pointer">
+<span class="text-label-sm text-on-surface-variant">Thu</span>
+<span class="text-h2 font-h2">19</span>
+</div>
+<div class="flex-shrink-0 w-14 h-20 rounded-lg bg-surface-container-highest border border-outline-variant flex flex-col items-center justify-center cursor-pointer">
+<span class="text-label-sm text-on-surface-variant">Fri</span>
+<span class="text-h2 font-h2">20</span>
+</div>
+<div class="flex-shrink-0 w-14 h-20 rounded-lg bg-surface-container-highest border border-outline-variant flex flex-col items-center justify-center cursor-pointer">
+<span class="text-label-sm text-on-surface-variant">Sat</span>
+<span class="text-h2 font-h2">21</span>
+</div>
+</div>
+<!-- Time Selection -->
+<div class="mt-lg">
+<p class="text-body-md font-bold text-on-surface mb-sm">Select Time</p>
+<div class="grid grid-cols-3 gap-sm">
+<button class="py-2 px-3 rounded-lg border border-outline-variant text-label-sm hover:border-primary hover:text-primary transition-colors">09:00 AM</button>
+<button class="py-2 px-3 rounded-lg bg-primary-container text-on-primary-container font-bold border border-primary text-label-sm">11:00 AM</button>
+<button class="py-2 px-3 rounded-lg border border-outline-variant text-label-sm hover:border-primary hover:text-primary transition-colors">01:00 PM</button>
+<button class="py-2 px-3 rounded-lg border border-outline-variant text-label-sm hover:border-primary hover:text-primary transition-colors">03:00 PM</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Info -->
+<section class="px-container-padding mt-lg">
+<div class="flex items-center gap-4 p-md bg-secondary-container/30 rounded-xl border border-secondary-container/50">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+<div>
+<h5 class="font-bold text-on-secondary-container">Estimated Duration</h5>
+<p class="text-label-sm text-on-secondary-fixed-variant">Approx. 120 minutes of professional work.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar (Floating Style) -->
+<div class="fixed bottom-0 left-0 w-full p-container-padding z-50 pointer-events-none">
+<div class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-2xl p-md shadow-[0_-4px_24px_rgba(0,0,0,0.1)] border border-slate-100 dark:border-slate-800 flex items-center justify-between pointer-events-auto max-w-2xl mx-auto">
+<div class="flex flex-col">
+<span class="text-label-sm text-on-surface-variant font-medium">Total Payment</span>
+<span class="text-h2 font-h2 text-primary">Rp 75.000</span>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-button px-lg py-sm rounded-xl active:scale-95 transition-all shadow-md flex items-center gap-2" onclick="window.location.href='orders.html'">
+                Pesan Layanan
+                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Hidden BottomNavBar as per requirement for non-top-level screens, but included logic for reference -->
+<nav class="hidden fixed bottom-0 left-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] flex justify-around items-center pt-3 pb-6 px-4">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-medium font-['Inter'] text-[12px]">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-medium font-['Inter'] text-[12px]">
+<span class="material-symbols-outlined">receipt_long</span>
+<span>Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-medium font-['Inter'] text-[12px]">
+<span class="material-symbols-outlined">chat</span>
+<span>Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-medium font-['Inter'] text-[12px]">
+<span class="material-symbols-outlined">person</span>
+<span>Profile</span>
+</div>
+</nav>
+</body></html>
